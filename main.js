@@ -844,7 +844,7 @@
   function initMedia() {
     const autos = $$('video[data-auto]');
     autos.forEach((v) => {
-      if (v.error || v.networkState === 3) v.parentNode.classList.add('is-empty');
+      if (v.error) v.parentNode.classList.add('is-empty');
       v.addEventListener('error', () => v.parentNode.classList.add('is-empty'));
     });
     if ('IntersectionObserver' in window) {
