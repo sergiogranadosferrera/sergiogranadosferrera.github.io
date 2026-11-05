@@ -405,12 +405,7 @@ main { position: relative; z-index: 1; }
   isolation: isolate;
   clip-path: polygon(0 0, 100% 0, 79% 100%, 0 100%);
 }
-.photo__frame img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.55) brightness(1.08); mix-blend-mode: multiply; }
-.photo__frame::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, .6) 1.7px, transparent 2.1px);
-  background-size: 7px 7px; mix-blend-mode: multiply;
-}
+.photo__frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .photo__ph { display: none; position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--negro); }
 .photo.is-empty img { display: none; }
 .photo.is-empty .photo__ph { display: block; }
@@ -797,6 +792,9 @@ html[data-lang="en"][data-screen="contacto"] .chip__opt[data-opt="en"] { backgro
 .lightbox__frame { background: var(--negro); box-shadow: 0 0 0 6px var(--blanco), 16px 16px 0 6px var(--rojo); rotate: -1.5deg; }
 .lightbox__frame video { display: block; max-width: calc(100vw - 56px); max-height: calc(100dvh - 130px); }
 .lightbox__close { position: absolute; top: 14px; right: var(--gutter); }
+@media (min-width: 1101px) {
+  .lightbox__close { top: 22px; padding: 14px 30px; font-size: 24px; }
+}
 
 .cutin { position: fixed; inset: 0; z-index: 90; pointer-events: none; display: none; overflow: hidden; }
 .cutin.is-on { display: block; }
